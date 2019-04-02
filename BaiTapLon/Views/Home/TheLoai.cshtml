@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BaiTapLon.EF.TheLoai>
+
+@{
+    ViewBag.Title = "TheLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TheLoai</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaTL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTL)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTL)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item  .MaTL)
+        </th>
+    </tr>
+}
+
+</table>

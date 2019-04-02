@@ -1,0 +1,31 @@
+﻿@model List<BaiTapLon.EF.BaiHat>
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        Danh sách bài hát
+    </a>
+    @foreach (var item in Model)
+    {
+        <script>
+            $(document).ready(function () {
+                $('#@item.MaAB').click(function () {
+                    alert('Bạn đã thích bài hát : @item.TenBH ');
+                });
+            });
+        </script>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge"><b style="color: red">@item.LuotYThich</b>Lượt yêu thích</span>
+                <a href="">@item.TenBH</a>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-primary" id="@item.MaAB">Like</button>
+                <button type="button" class="btn btn-danger">Yêu thích</button>
+            </li>
+        </ul>
+    }
+</div>
+

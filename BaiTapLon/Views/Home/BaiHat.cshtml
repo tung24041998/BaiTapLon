@@ -1,0 +1,27 @@
+﻿@model List<BaiTapLon.EF.BaiHat>
+@{
+
+    ViewBag.Title = "BaiHat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        Danh sách bài hát
+    </a>
+    @foreach (var item in Model)
+    {
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge"><b id="b@(item.MaBH)" data-luotthich="@item.LuotNghe" style="color: red">@item.LuotNghe<b>Lượt yêu thích</b></span>
+                <a href="@item.Anh">@item.TenBH</a>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-primary btn_like" data-id="@item.MaBH">Like</button>
+                <button type="button" class="btn btn-danger">Yêu thích</button>
+            </li>
+        </ul>
+    }
+
+
+</div>
+
