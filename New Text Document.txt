@@ -1,1 +1,5 @@
 gdsfhgsdfhwdfbgshdfhsrehbjnegthjetr
+status
+add . 
+commit -m"dfd"
+push
