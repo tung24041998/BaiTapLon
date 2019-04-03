@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PagedList;
+using PagedList.Mvc;
 
 namespace BaiTapLon.Dao
 {
@@ -39,6 +41,11 @@ namespace BaiTapLon.Dao
             dbContext.UserNames.Remove(Dl);
             dbContext.SaveChanges();
             return id;
+        }
+
+        public IEnumerable<UserName> ListAllPaping(int page , int pageSize)
+        {
+            return dbContext.UserNames.OrderByDescending(x => x.Id).ToPagedList(page, pageSize);
         }
 
     }

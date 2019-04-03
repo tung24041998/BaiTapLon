@@ -10,10 +10,13 @@ namespace BaiTapLon.Controllers
 {
     public class UserController : Controller
     {
-        private UserDAO dbuser = new UserDAO(); 
-        public ActionResult Index()
+        private UserDAO dbuser = new UserDAO();
+        //int page = 1, int pageSize = 1
+        //    var bh = dbuser.LissAllPaping(page, pageSize);
+        public ActionResult Index(int page = 1)
         {
-            var model = dbuser.GetAllUser().ToList();
+            int pageSize = 5;
+            var model = dbuser.ListAllPaping(page, pageSize);
             return View(model);
         }
 
@@ -28,7 +31,7 @@ namespace BaiTapLon.Controllers
             if (ModelState.IsValid)
             {
                 var Email = dbuser.GetEmail(user.email);
-                if(Email != null)
+                if (Email != null)
                 {
                     ViewBag.id = "Email da ton tai";
                     return View();
@@ -64,7 +67,6 @@ namespace BaiTapLon.Controllers
         public ActionResult Details(int id)
         {
             var bh = dbuser.GetId(id);
-
             return View(bh);
         }
 
@@ -87,7 +89,7 @@ namespace BaiTapLon.Controllers
                 ViewBag.msg = "Đang nhập không đúng !";
                 return View();
             }
-               
+
         }
 
     }

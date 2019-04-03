@@ -524,7 +524,8 @@ width:100%;
 
 /*--inner-banner -- */
 .inner_page-banner {
-    background: url(../Content/images/b1.jpg) no-repeat center;
+    background: url(..
+    /Content/images/b1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
