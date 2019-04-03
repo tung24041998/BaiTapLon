@@ -3,3 +3,9 @@ status
 add . 
 commit -m"dfd"
 push
+
+clone : lay all
+git pull: cap nhap cai moi
+
+git log : ma log
+git revert 'ma log' : lay lai ban ghi 
